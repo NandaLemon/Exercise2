@@ -48,12 +48,46 @@ namespace Exercise2
                         int temp;
                         temp = Lemon[RP];
                         Lemon[RP] = Lemon[RP + 1];
-                        Lemon[RP + 1] = temp
+                        Lemon[RP + 1] = temp;
                     }
                 }
             }
         }
+        void swap(int x, int y)
+        {
+            int temp;
 
+            temp = Lemon[x];
+            Lemon[x] = Lemon[y];
+            Lemon[y] = temp;
+        }
+        public void QuicksortArray(int low,int high)
+        {
+            int pivot, i, RP;
+            if (low > high)
+                return;
+            i = low + 1;
+            RP = high;
+
+            pivot = Lemon[low];
+            while(i<=RP)
+            {
+                while ((Lemon[i]<= pivot)&&(i<=high))
+                {
+                    i++;
+                }
+                if(i<RP)
+                {
+                    swap(i, RP);
+                }
+            }
+            if (low < RP)
+            {
+                swap(low, RP);
+            }
+            QuicksortArray(low, RP - 1);
+            QuicksortArray(RP + 1, high);
+        }
     }
 }
 

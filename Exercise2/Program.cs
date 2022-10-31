@@ -88,6 +88,7 @@ namespace Exercise2
             }
             QuicksortArray(low, RP - 1);
             QuicksortArray(RP + 1, high);
+
         }
         static void Main(string[] args)
         {

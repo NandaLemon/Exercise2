@@ -37,7 +37,22 @@ namespace Exercise2
                 Lemon[i] = Int32.Parse(s1);
             }
         }
-        pub
+        public void BubbleSortArray()
+        {
+           for (int i = 0; i < n; i++)
+            {
+                for(int RP = 0; RP < n; RP++)
+                {
+                    if(Lemon[RP] > Lemon[RP + 1])
+                    {
+                        int temp;
+                        temp = Lemon[RP];
+                        Lemon[RP] = Lemon[RP + 1];
+                        Lemon[RP + 1] = temp
+                    }
+                }
+            }
+        }
 
     }
 }

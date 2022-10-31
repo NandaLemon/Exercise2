@@ -116,6 +116,7 @@ namespace Exercise2
                         myList.BubbleSortArray();
                         break;
 
+
                     case 2:
                         Console.WriteLine("");
                         Console.WriteLine("-------------------------");

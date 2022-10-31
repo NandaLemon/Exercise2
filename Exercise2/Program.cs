@@ -8,14 +8,14 @@ namespace Exercise2
 {
     class Program
     {
-        int[]Lemon = new int[20];
+        int[] Lemon = new int[20];
         int n;
         int i;
         private object int32;
 
         public void input()
         {
-            while(true)
+            while (true)
             {
                 Console.Write("enter the number of element in the array :");
                 string s = Console.ReadLine();
@@ -30,7 +30,7 @@ namespace Exercise2
             Console.WriteLine("-------------");
             Console.WriteLine("Enter Array");
             Console.WriteLine("-------------");
-            for(i = 0; i < n; i++)
+            for (i = 0; i < n; i++)
             {
                 Console.WriteLine("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
@@ -39,11 +39,11 @@ namespace Exercise2
         }
         public void BubbleSortArray()
         {
-           for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
-                for(int RP = 0; RP < n; RP++)
+                for (int RP = 0; RP < n; RP++)
                 {
-                    if(Lemon[RP] > Lemon[RP + 1])
+                    if (Lemon[RP] > Lemon[RP + 1])
                     {
                         int temp;
                         temp = Lemon[RP];
@@ -62,7 +62,7 @@ namespace Exercise2
             Lemon[x] = Lemon[y];
             Lemon[y] = temp;
         }
-        public void QuicksortArray(int low,int high)
+        public void QuicksortArray(int low, int high)
         {
             int pivot, i, RP;
             if (low > high)
@@ -71,13 +71,13 @@ namespace Exercise2
             RP = high;
 
             pivot = Lemon[low];
-            while(i<=RP)
+            while (i <= RP)
             {
-                while ((Lemon[i]<= pivot)&&(i<=high))
+                while ((Lemon[i] <= pivot) && (i <= high))
                 {
                     i++;
                 }
-                if(i<RP)
+                if (i < RP)
                 {
                     swap(i, RP);
                 }
@@ -88,6 +88,57 @@ namespace Exercise2
             }
             QuicksortArray(low, RP - 1);
             QuicksortArray(RP + 1, high);
+        }
+        static void Main(string[] args)
+        {
+            Program myList = new Program();
+            int pilianmenu;
+            do
+            {
+                Console.WriteLine("Menu Option");
+                Console.WriteLine("========================");
+                Console.WriteLine("1.Bubblesorth");
+                Console.WriteLine("2.Quicksort");
+                Console.WriteLine("3.Exit");
+                Console.Write("Enter your choice (1,2,3) :");
+                pilianmenu = Convert.ToInt32(Console.ReadLine());
+
+                switch (pilianmenu)
+                {
+                    case 1:
+                        Console.WriteLine("");
+                        Console.WriteLine("-------------------------");
+                        Console.WriteLine("Bubblesort");
+                        Console.WriteLine("-------------------------");
+                        myList.input();
+                        myList.BubbleSortArray();
+                        break;
+
+                    case 2:
+                        Console.WriteLine("");
+                        Console.WriteLine("-------------------------");
+                        Console.WriteLine("Quicksort");
+                        Console.WriteLine("-------------------------");
+                        myList.input();
+                        myList.QuicksortArray();
+                        break;
+
+                    case 3:
+                        Console.WriteLine("exit.");
+                        break;
+                    default:
+                        Console.WriteLine("error");
+                        break;
+                }
+                Console.WriteLine("\n\nPress Return to Exit.");
+                Console.ReadLine();
+            } while (pilianmenu != 3);
+
+        }
+
+        private void QuicksortArray()
+        {
+            throw new NotImplementedException();
         }
     }
 }

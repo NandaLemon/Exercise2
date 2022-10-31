@@ -8,7 +8,7 @@ namespace Exercise2
 {
     class Program
     {
-        int[] Lemon = new int[20];
+        int[] Lemon = new int[22];
         int n;
         int i;
         private object int32;

@@ -24,6 +24,7 @@ namespace Exercise2
                     break;
                 else
                     Console.WriteLine("\nArray should have minimum 1 and maximum 20 elements.\n");
+
             }
             Console.WriteLine("");
             Console.WriteLine("-------------");
